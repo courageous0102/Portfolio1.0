@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Prasad | AI/ML Engineer Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Abhishek Prasad - AI/ML Engineer specializing in Computer Vision, Deep Learning, and Flutter Development. Explore projects in face detection, hand gesture recognition, and AI-powered applications.">
+    <meta name="keywords" content="AI, ML, Machine Learning, Deep Learning, Python, Portfolio, Abhishek Prasad">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>AP<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+                <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting reveal-up">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name reveal-up" style="animation-delay: 0.2s">
+                    Abhishek <span class="name-highlight">Prasad</span>
+                </h1>
+                <div class="hero-title-wrapper reveal-up" style="animation-delay: 0.4s">
+                    <span class="hero-title-prefix">&gt;_</span>
+                    <h2 class="hero-title" id="typed-text"></h2>
+                    <span class="typed-cursor">|</span>
+                </div>
+                <p class="hero-description reveal-up" style="animation-delay: 0.6s">
+                    Passionate AI/ML Engineer crafting intelligent solutions with
+                    <span class="highlight">Computer Vision</span>,
+                    <span class="highlight">Deep Learning</span>, and
+                    <span class="highlight">Mobile Development</span>.
+                </p>
+                <div class="hero-buttons reveal-up" style="animation-delay: 0.8s">
+                    <a href="#projects" class="btn btn-primary">
+                        <span class="btn-text">View Projects</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span class="btn-text">Get in Touch</span>
+                    </a>
+                </div>
+                <div class="hero-stats reveal-up" style="animation-delay: 1s">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="8.45">0</span>
+                        <span class="stat-label">SGPA</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Awards</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual reveal-up" style="animation-delay: 0.5s">
+                <div class="profile-frame">
+                    <div class="profile-glow"></div>
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring ring-2"></div>
+                    <img src="assets\WhatsApp Image 2026-04-14 at 3.33.37 PM.png" alt="Abhishek Prasad - AI/ML Engineer"
+                        class="profile-img">
+                    <div class="profile-badge">
+                        <span class="badge-icon">🤖</span>
+                        <span class="badge-text">AI/ML</span>
+                    </div>
+                </div>
+                <!-- Floating Tech Icons -->
+                <div class="floating-icons">
+                    <div class="float-icon" style="--delay: 0s; --x: -60px; --y: -80px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                        </svg>
+                    </div>
+                    <div class="float-icon" style="--delay: 1s; --x: 80px; --y: -40px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z" />
+                            <path d="M5 7h5v5H5z" />
+                        </svg>
+                    </div>
+                    <div class="float-icon" style="--delay: 2s; --x: 70px; --y: 60px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <div class="float-icon" style="--delay: 3s; --x: -70px; --y: 50px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-left">&lt;about&gt;</span>
+                <h2 class="section-title reveal-up">Know <span class="title-highlight">About Me</span></h2>
+                <div class="section-line reveal-up"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-border"></div>
+                        <img src="assets/hero-bg.png" alt="AI Neural Network Visualization" class="about-img">
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="exp-number">B.Tech</span>
+                        <span class="exp-text">CSE Student</span>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h3 class="about-subtitle">AI/ML Enthusiast & Developer</h3>
+                    <p class="about-text">
+                        I'm a B.Tech Computer Science Engineering student at Mewar University with a strong passion for
+                        <span class="text-highlight">Artificial Intelligence</span> and <span
+                            class="text-highlight">Machine Learning</span>.
+                        My journey in tech has led me to build intelligent systems that solve real-world problems — from
+                        face detection algorithms achieving <span class="text-highlight">70% accuracy</span> to
+                        AI-powered note-taking
+                        apps with <span class="text-highlight">90% grammar accuracy</span>.
+                    </p>
+                    <p class="about-text">
+                        I specialize in Computer Vision, Deep Learning frameworks like TensorFlow and PyTorch,
+                        and cross-platform mobile development using Flutter. I love turning complex AI concepts
+                        into practical, user-friendly applications.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Chittorgarh, Rajasthan</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🎓</span>
+                            <div>
+                                <span class="info-label">Degree</span>
+                                <span class="info-value">B.Tech CSE (2023-2027)</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📧</span>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">abhip9835@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📱</span>
+                            <div>
+                                <span class="info-label">Phone</span>
+                                <span class="info-value">+91-9835268065</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary about-btn">
+                        <span class="btn-text">Let's Connect</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-left">&lt;skills&gt;</span>
+                <h2 class="section-title reveal-up">My <span class="title-highlight">Tech Stack</span></h2>
+                <div class="section-line reveal-up"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-category reveal-up" style="animation-delay: 0.1s">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Languages</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-dot"></span>Python</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>C/C++</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Java</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>SQL</div>
+                    </div>
+                </div>
+
+                <!-- ML/AI Frameworks -->
+                <div class="skill-category reveal-up" style="animation-delay: 0.2s">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M12 2v4m0 12v4m-7.07-3.93l2.83-2.83m8.48-8.48l2.83-2.83M2 12h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83" />
+                            </svg>
+                        </div>
+                        <h3 class="category-title">AI/ML Frameworks</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-dot"></span>TensorFlow</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>PyTorch</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Keras</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Scikit-learn</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>OpenCV</div>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="skill-category reveal-up" style="animation-delay: 0.3s">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18" />
+                                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Data Science</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-dot"></span>NumPy</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Pandas</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Matplotlib</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Jupyter Notebook</div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category reveal-up" style="animation-delay: 0.4s">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-dot"></span>AWS</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Flutter</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Streamlit</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>GitHub</div>
+                        <div class="skill-chip"><span class="chip-dot"></span>Google Colab</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neural Network Visualization -->
+            <div class="neural-net-visual reveal-up">
+                <canvas id="neural-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-left">&lt;projects&gt;</span>
+                <h2 class="section-title reveal-up">Featured <span class="title-highlight">Projects</span></h2>
+                <div class="section-line reveal-up"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal-up" style="animation-delay: 0.1s">
+                    <div class="project-card-inner">
+                        <div class="project-number">01</div>
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="32" cy="22" r="10" />
+                                    <rect x="14" y="36" width="36" height="24" rx="4" />
+                                    <circle cx="26" cy="18" r="2" fill="currentColor" />
+                                    <circle cx="38" cy="18" r="2" fill="currentColor" />
+                                    <path d="M26 26c3 3 9 3 12 0" />
+                                    <rect x="20" y="42" width="24" height="2" rx="1" />
+                                    <rect x="20" y="48" width="16" height="2" rx="1" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Face Detection & Recognition</h3>
+                        <p class="project-description">
+                            Implemented a face detection system using Python and OpenCV, achieving
+                            <span class="text-highlight">70% accuracy</span>. Utilized Deep Learning models
+                            including Haar cascades, HOG, CNN, and Face embeddings for accurate detection.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Deep Learning</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="stat-value">70%</span>
+                                <span class="stat-desc">Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/courageous0102/face_recognition_project_using_python"
+                                class="project-link" title="View Source">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card-glow"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal-up" style="animation-delay: 0.2s">
+                    <div class="project-card-inner">
+                        <div class="project-number">02</div>
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M32 8c-2 0-4 1-5 3l-3 8-8 2c-2 0.5-3 2-3 4s1 3.5 3 4.5l7 5 0 8c0 2 1 3.5 3 4s4 0 5-1.5l5-6 5 6c1 1.5 3 2 5 1.5s3-2 3-4l0-8 7-5c2-1 3-2.5 3-4.5s-1-3.5-3-4l-8-2-3-8c-1-2-3-3-5-3z" />
+                                    <circle cx="32" cy="28" r="6" />
+                                    <path d="M28 26l3 3 5-5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Hand Gesture Presentation</h3>
+                        <p class="project-description">
+                            Developed a hand gesture detection system to control presentation slides using OpenCV,
+                            achieving <span class="text-highlight">80% detection accuracy</span>.
+                            Utilized OpenCV's CV2 module for real-time hand gesture recognition.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">CV2</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="stat-value">80%</span>
+                                <span class="stat-desc">Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/courageous0102/Handgesture_presentation_using_python"
+                                class="project-link" title="View Source">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card-glow"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal-up" style="animation-delay: 0.3s">
+                    <div class="project-card-inner">
+                        <div class="project-number">03</div>
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="16" y="6" width="32" height="52" rx="4" />
+                                    <rect x="22" y="16" width="20" height="28" rx="2" />
+                                    <circle cx="32" cy="52" r="2" />
+                                    <path d="M28 22h8M28 28h12M28 34h6" />
+                                    <circle cx="42" cy="14" r="4" />
+                                    <path d="M40 14l1.5 1.5 3-3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="project-title">AI Note Taking App</h3>
+                        <p class="project-description">
+                            Designed and built an AI-enhanced mobile app to convert speech into smart, editable notes.
+                            Implemented AI features for <span class="text-highlight">90% grammar accuracy</span>,
+                            text summarization, and relevant link suggestions.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Speech-to-Text</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="stat-value">90%</span>
+                                <span class="stat-desc">Grammar Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="View Source">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card-glow"></div>
+                </div>
+            </div>
+
+            <div class="projects-cta reveal-up">
+                <p class="cta-text">Want to see more?</p>
+                <a href="https://github.com/courageous0102" target="_blank"
+                    class="btn btn-secondary projects-github-btn">
+                    <svg class="btn-github-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                    <span class="btn-text">Check more projects on GitHub</span>
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-left">&lt;education&gt;</span>
+                <h2 class="section-title reveal-up"><span class="title-highlight">Education</span></h2>
+                <div class="section-line reveal-up"></div>
+            </div>
+
+            <div class="edu-timeline">
+                <!-- Education -->
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-badge">🎓 Education</div>
+                        <h3 class="timeline-title">B.Tech in Computer Science Engineering</h3>
+                        <h4 class="timeline-subtitle">Mewar University, Chittorgarh, Rajasthan</h4>
+                        <span class="timeline-date">2023 - 2027</span>
+                        <div class="timeline-detail">
+                            <span class="detail-label">SGPA:</span>
+                            <span class="detail-value sgpa-badge">8.45</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                Certifications
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-badge">📜 Certification</div>
+                        <h3 class="timeline-title">AI/ML & Java</h3>
+                        <h4 class="timeline-subtitle">CTTC (Central Tool Room And Training Centre)</h4>
+                        <span class="timeline-date">Bhubaneshwar, Odisha</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-badge">📜 Certification</div>
+                        <h3 class="timeline-title">Flutter Framework</h3>
+                        <h4 class="timeline-subtitle">VAC (Value Added Course), Mewar University</h4>
+                        <span class="timeline-date">Rajasthan</span>
+                    </div>
+                </div>
+
+                Awards
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-card award-card">
+                        <div class="timeline-badge">🏆 Award</div>
+                        <h3 class="timeline-title">3rd Place in Hackathon 1.0</h3>
+                        <h4 class="timeline-subtitle">Mewar University, Rajasthan</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card award-card">
+                        <div class="timeline-badge">🥇 Award</div>
+                        <h3 class="timeline-title">1st Place in Project Display</h3>
+                        <h4 class="timeline-subtitle">Engineer's Day - Mewar University</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+                <!-- Achievement Gallery Section -->
+                <section class="section gallery" id="gallery">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-tag reveal-left">&lt;gallery&gt;</span>
+                            <h2 class="section-title reveal-up">Achievement <span class="title-highlight">Gallery</span>
+                            </h2>
+                            <div class="section-line reveal-up"></div>
+                            <p class="section-subtitle reveal-up">A visual journey of my milestones, hackathons, and
+                                technical certifications.</p>
+                        </div>
+
+                        <div class="gallery-grid">
+                            <!-- Hackathon 3.0 (Special 2-image side-by-side) -->
+                            <div class="gallery-item reveal-up wide" style="animation-delay: 0.1s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">🏆 Hackathon 3.0 - HACK2SKILL</div>
+                                    <div class="gallery-dual-images">
+                                        <div class="gallery-img-wrapper"
+                                            data-caption="Hackathon 3.0 - Achievement Certificate">
+                                            <img src="assets\Hackathon3.0.png" alt="Hackathon 3.0 Certificate">
+                                            <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                        </div>
+                                        <div class="gallery-img-wrapper" data-caption="Hackathon 3.0 - Winning Moment">
+                                            <img src="assets\teamhackathon.png" alt="Hackathon 3.0 Event Photo">
+                                            <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">Hackathon 3.0 (National Level)</h3>
+                                        <p class="gallery-item-desc">Organized by HACK2SKILL. A massive-scale innovation
+                                            event where our team developed AI solutions.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hackathon 1.0 -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.2s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">🏆 Hackathon 1.0</div>
+                                    <div class="gallery-img-wrapper" data-caption="Hackathon 1.0 - Mewar University">
+                                        <img src="assets\hackathon1.0.jpeg" alt="Hackathon 1.0 Certificate">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">HACKATHON 1.0</h3>
+                                        <p class="gallery-item-desc">Organized by Mewar University. Bagged 3rd place for
+                                            our project.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flutter VAC -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.3s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">📜 Flutter Certification</div>
+                                    <div class="gallery-img-wrapper"
+                                        data-caption="VAC: Flutter Framework Course Completion">
+                                        <img src="assets\flutter.jpeg" alt="Flutter Framework Certificate">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">VAC Flutter Framework</h3>
+                                        <p class="gallery-item-desc">Advanced mobile app development training
+                                            certification from Mewar University.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTTC AI/ML -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.4s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">🤖 AI/ML Certification</div>
+                                    <div class="gallery-img-wrapper"
+                                        data-caption="CTTC: Artificial Intelligence & Machine Learning">
+                                        <img src="assets\cttcaiml.jpeg" alt="CTTC AI/ML Certificate">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">CTTC AI/ML Course</h3>
+                                        <p class="gallery-item-desc">Professional training in deep learning and model
+                                            optimization from CTTC.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTTC JAVA -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.5s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">☕ Java Certification</div>
+                                    <div class="gallery-img-wrapper" data-caption="CTTC: Core Java Programming">
+                                        <img src="assets\cttcjava.jpeg" alt="CTTC Java Certificate">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">CTTC JAVA (Core)</h3>
+                                        <p class="gallery-item-desc">Comprehensive certification in object-oriented
+                                            programming and Java fundamentals.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engineer's Day -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.6s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">🥇 1st Prize</div>
+                                    <div class="gallery-img-wrapper"
+                                        data-caption="Engineer's Day Project Showcasing - First Prize">
+                                        <img src="assets\engineerday.jpeg" alt="Engineers Day Award">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">Project Showcasing</h3>
+                                        <p class="gallery-item-desc">Won 1st prize in the technical project exhibition
+                                            on Engineer's Day.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- E-sports -->
+                            <div class="gallery-item reveal-up" style="animation-delay: 0.7s">
+                                <div class="gallery-card">
+                                    <div class="gallery-label">🎮 E-sports Management</div>
+                                    <div class="gallery-img-wrapper" data-caption="E-sports Management Certificate">
+                                        <img src="assets\unifest.jpeg" alt="E-sports Certificate">
+                                        <div class="gallery-overlay"><span class="view-icon">🔍</span></div>
+                                    </div>
+                                    <div class="gallery-info">
+                                        <h3 class="gallery-item-title">E-sports Management</h3>
+                                        <p class="gallery-item-desc">Certification in organized gaming and tournament
+                                            operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="section contact" id="contact">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-tag reveal-left">&lt;contact&gt;</span>
+                            <h2 class="section-title reveal-up">Get In <span class="title-highlight">Touch</span></h2>
+                            <div class="section-line reveal-up"></div>
+                            <p class="section-subtitle reveal-up">I'm always open to discussing new projects, creative
+                                ideas, or
+                                opportunities to be part of your vision.</p>
+                        </div>
+
+                        <div class="contact-grid">
+                            <div class="contact-info reveal-left">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                            <polyline points="22,6 12,13 2,6" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">Email</span>
+                                        <a href="mailto:abhip9835@gmail.com"
+                                            class="contact-value">abhip9835@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">Phone</span>
+                                        <a href="tel:+919835268065" class="contact-value">+91-9835268065</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">Location</span>
+                                        <span class="contact-value">Chittorgarh, Rajasthan, India</span>
+                                    </div>
+                                </div>
+
+                                <div class="social-links">
+                                    <a href="https://www.linkedin.com/in/abhishek-prasad-446435348?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                        target="_blank" class="social-link" id="linkedin-link" title="LinkedIn">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/courageous0102" target="_blank" class="social-link"
+                                        id="github-link" title="GitHub">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <form class="contact-form reveal-right" id="contact-form">
+                                <div class="form-group">
+                                    <input type="text" id="form-name" name="user_name" class="form-input"
+                                        placeholder=" " required>
+                                    <label for="form-name" class="form-label">Your Name</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="form-email" name="user_email" class="form-input"
+                                        placeholder=" " required>
+                                    <label for="form-email" class="form-label">Your Email</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="form-subject" name="subject" class="form-input"
+                                        placeholder=" ">
+                                    <label for="form-subject" class="form-label">Subject</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="form-message" name="message" class="form-input form-textarea"
+                                        placeholder=" " required rows="5"></textarea>
+                                    <label for="form-message" class="form-label">Message</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary form-submit" id="form-submit">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="22" y1="2" x2="11" y2="13" />
+                                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-logo">
+                                <span class="logo-bracket">&lt;</span>AP<span class="logo-bracket">/&gt;</span>
+                            </div>
+                            <p class="footer-text">Designed & Built by <span class="text-highlight">Abhishek
+                                    Prasad</span></p>
+                            <p class="footer-copyright">&copy; 2026 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Lightbox Modal -->
+                <div class="lightbox" id="lightbox">
+                    <div class="lightbox-overlay"></div>
+                    <div class="lightbox-content">
+                        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+                        <div class="lightbox-img-container">
+                            <img src="" alt="" id="lightbox-img">
+                            <p class="lightbox-caption" id="lightbox-caption"></p>
+                        </div>
+                        <button class="lightbox-nav lightbox-prev" id="lightbox-prev"
+                            aria-label="Previous image">&#10094;</button>
+                        <button class="lightbox-nav lightbox-next" id="lightbox-next"
+                            aria-label="Next image">&#10095;</button>
+                    </div>
+                </div>
+
+                <script src="script.js"></script>
+</body>
+
+</html>
